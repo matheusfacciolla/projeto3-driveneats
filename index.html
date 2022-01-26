@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Links css -->
+
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/estilo.css" rel="stylesheet"/>
+
+    <!-- links font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <title>Driven Eats</title>
+    
+</head>
+
+<body>
+
+    <!--Topo da página -->
+
+    <header>
+        <div class="barra-superior">
+            <h1>DrivenEats</h1>
+            <p>Sua comida em 6 minutos</p>
+        </div>
+    </header>
+    
+     <!-- Conteudo Principal -->
+
+    <main>
+        
+        <!-- Pratos -->
+
+        <div class="titulo"><p>Primeiro, seu prato</p></div>
+
+        <div class="opcoes__pratos" data-identifier="dishes">
+    
+            <div id="prato1" class="opcao__prato" onclick="escolherPrato1()" data-identifier="food-option">
+                <img src="imagens/frango_yin_yang 1.png" alt="Frango">
+                <p data-identifier="food-title">Frango Yin Yang</p>
+                <p>Um pouco de batata, um pouco de salada</p>
+                <p data-identifier="food-price">R$ 12,90</p>
+            </div>
+ 
+            <div id="prato2" class="opcao__prato" onclick="escolherPrato2()" data-identifier="food-option">
+                <img src="imagens/hamburger.png" alt="Hamburger">
+                <p data-identifier="food-title">Hamburger</p>
+                <p>Um pouco de carne, um pouco de pão</p>
+                <p data-identifier="food-price">R$ 14,90</p>
+            </div>
+    
+            <div id="prato3" class="opcao__prato" onclick="escolherPrato3()" data-identifier="food-option">
+                <img src="imagens/pizza.jpeg" alt="pizza">
+                <p data-identifier="food-title">Pizza</p>
+                <p>Um pouco de massa, um pouco de recheio</p>
+                <p data-identifier="food-price">R$ 16,90</p>
+            </div>
+        </div>
+
+        <!-- Bebidas -->
+
+        <div class="titulo"><p>Agora, sua bebida</p></div>
+
+        <div class="opcoes__bebidas" data-identifier="drinks">
+    
+            <div id="bebida1" class="opcao__bebida" onclick="escolherBebida1()" data-identifier="food-option">
+                <img src="imagens/coquinha_gelada 1.png" alt="Coca">
+                <p data-identifier="food-title">Coquinha gelada</p>
+                <p>Lata 350ml</p>
+                <p data-identifier="food-price">R$ 4,90</p>
+            </div>
+
+       
+            <div id="bebida2" class="opcao__bebida" onclick="escolherBebida2()" data-identifier="food-option">
+                <img src="imagens/guarana.jpg" alt="Guaraná">
+                <p data-identifier="food-title">Guaraná gelado</p>
+                <p>Lata 350ml</p>
+                <p data-identifier="food-price">R$ 5,90</p>
+            </div>
+    
+            <div id="bebida3" class="opcao__bebida" onclick="escolherBebida3()" data-identifier="food-option">
+                <img src="imagens/pepsi.jpg" alt="Pepsi">
+                <p data-identifier="food-title">Pepsi gelada</p>
+                <p>Lata 350ml</p>
+                <p data-identifier="food-price">R$ 6,90</p>
+            </div>
+        </div>
+
+        <!-- Sobremesas -->
+
+        <div class="titulo"><p>Por fim, sua sobremesa</p></div>
+
+        <div class="opcoes__sobremesa" data-identifier="desserts">
+    
+            <div id="sobremesa1" class="opcao__sobremesa" onclick="escolherSobremesa1()" data-identifier="food-option">
+                <img src="imagens/sorvete.jpg" alt="sorvete">
+                <p data-identifier="food-title">sorvete</p>
+                <p>Apenas sorvete</p>
+                <p data-identifier="food-price">R$ 3,90</p>
+            </div>
+
+       
+            <div id="sobremesa2" class="opcao__sobremesa" onclick="escolherSobremesa2()" data-identifier="food-option">
+                <img src="imagens/pudim 1.png" alt="Pudim">
+                <p data-identifier="food-title">Pudim</p>
+                <p>Apenas pudim</p>
+                <p data-identifier="food-price">R$ 6,90</p>
+            </div>
+    
+            <div id="sobremesa3" class="opcao__sobremesa" onclick="escolherSobremesa3()" data-identifier="food-option">
+                <img src="imagens/bolo.png" alt="bolo">
+                <p data-identifier="food-title">bolo</p>
+                <p>Apenas bolo</p>
+                <p data-identifier="food-price">R$ 9,90</p>
+            </div>
+        </div>
+       
+    </main>
+    
+    <!--Rodapé da página -->
+
+    <footer> 
+        <div id="botao" class="barra-inferior" onchange="ativarBotao()"><button>Selecione os 3 itens para fechar o pedido</button></div>
+    </footer>
+
+    <!-- java script da página -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
