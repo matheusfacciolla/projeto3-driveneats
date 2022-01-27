@@ -126,7 +126,18 @@
     <!--Rodapé da página -->
 
     <footer> 
-        <button disabled id="botao" onclick="finalizar()">Selecione os 3 itens <br> para fechar o pedido</button>
+        
+        <button disabled id="botao" class="trigger" onclick="checkout()">Selecione os 3 itens <br> para fechar o pedido</button>
+
+        <div class="modal"> 
+            <div class="modal-conteudo">
+                <h1>Confirme seu pedido</h1> 
+                <div id="lista_itens"></div>
+                <p class="confirm-button" onclick="finalizar()">Tudo certo, pode pedir! </p>
+                <span class="close-button">cancelar</span>
+            </div>
+
+        </div>
     </footer>
 
     <!-- java script da página -->

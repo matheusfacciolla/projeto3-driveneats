@@ -99,7 +99,6 @@ main{
     margin-left: 16px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
-    border: 3px solid white;
     border-radius: 9px;
 }
 
@@ -165,7 +164,6 @@ main{
     margin-left: 16px;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border: 3px solid white;
     border-radius: 9px;
 }
 
@@ -233,7 +231,6 @@ main{
     margin-left: 16px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
-    border: 3px solid white;
     border-radius: 9px;
 }
 
@@ -299,10 +296,6 @@ footer{
     bottom: 0;
 }
 
-
-
-
-
 button{
     background: #CBCBCB;
     border: #CBCBCB;
@@ -319,5 +312,119 @@ button{
     letter-spacing: 0.018em;
     color: #FFFFFF;
 }
+
+
+/* fundo modal */
+.modal { 
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 245, 245, 0.877);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/* modal */
+
+.modal-conteudo { 
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:   #50D074;
+    width: 377px; 
+    height: 353px;
+    border-radius: 9px;
+}
+
+.modal-conteudo h1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 21px;
+}
+
+.mostrar-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+/*botao de cancelar*/
+
+.close-button { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 329px;
+    height: 52px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: #50D074;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: 24px; 
+}
+
+.close-button:hover {
+    background-color:rgba(169, 169, 169, 0.5);
+}
+
+/*botao de pedir*/
+
+.confirm-button { 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 329px;
+    height: 52px;
+    cursor: pointer;
+    border-radius: 100px;
+    background-color: #FFFFFF;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    color: #50D074;
+    margin-left: 24px; 
+    margin-top: 28px;
+}
+
+.item{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.item p{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF;
+    margin-top: 17px;
+}
+
+
+
+
+
 
 
