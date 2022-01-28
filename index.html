@@ -46,6 +46,7 @@
                 <p data-identifier="food-title">Frango Yin Yang</p>
                 <p>Um pouco de batata, um pouco de salada</p>
                 <p data-identifier="food-price">R$ 12,90</p>
+                <ion-icon id="icon-prato1" class="icons-escondido1" name="checkmark-circle"></ion-icon>
             </div>
  
             <div id="prato2" class="opcao__prato" onclick="escolherPrato2()" data-identifier="food-option">
@@ -53,6 +54,7 @@
                 <p data-identifier="food-title">Hamburger</p>
                 <p>Um pouco de carne, um pouco de pão</p>
                 <p data-identifier="food-price">R$ 14,90</p>
+                <ion-icon id="icon-prato2" class="icons-escondido1" name="checkmark-circle"></ion-icon>
             </div>
     
             <div id="prato3" class="opcao__prato" onclick="escolherPrato3()" data-identifier="food-option">
@@ -60,6 +62,7 @@
                 <p data-identifier="food-title">Pizza</p>
                 <p>Um pouco de massa, um pouco de recheio</p>
                 <p data-identifier="food-price">R$ 16,90</p>
+                <ion-icon id="icon-prato3" class="icons-escondido1" name="checkmark-circle"></ion-icon>
             </div>
         </div>
 
@@ -74,14 +77,15 @@
                 <p data-identifier="food-title">Coquinha gelada</p>
                 <p>Lata 350ml</p>
                 <p data-identifier="food-price">R$ 4,90</p>
+                <ion-icon id="icon-bebida1" class="icons-escondido2" name="checkmark-circle"></ion-icon>
             </div>
 
-       
             <div id="bebida2" class="opcao__bebida" onclick="escolherBebida2()" data-identifier="food-option">
                 <img src="imagens/guarana.jpg" alt="Guaraná">
                 <p data-identifier="food-title">Guaraná gelado</p>
                 <p>Lata 350ml</p>
                 <p data-identifier="food-price">R$ 5,90</p>
+                <ion-icon id="icon-bebida2" class="icons-escondido2" name="checkmark-circle"></ion-icon>
             </div>
     
             <div id="bebida3" class="opcao__bebida" onclick="escolherBebida3()" data-identifier="food-option">
@@ -89,6 +93,7 @@
                 <p data-identifier="food-title">Pepsi gelada</p>
                 <p>Lata 350ml</p>
                 <p data-identifier="food-price">R$ 6,90</p>
+                <ion-icon id="icon-bebida3" class="icons-escondido2" name="checkmark-circle"></ion-icon>
             </div>
         </div>
 
@@ -103,6 +108,7 @@
                 <p data-identifier="food-title">sorvete</p>
                 <p>Apenas sorvete</p>
                 <p data-identifier="food-price">R$ 3,90</p>
+                <ion-icon id="icon-sobremesa1" class="icons-escondido3" name="checkmark-circle"></ion-icon>
             </div>
 
        
@@ -111,6 +117,7 @@
                 <p data-identifier="food-title">Pudim</p>
                 <p>Apenas pudim</p>
                 <p data-identifier="food-price">R$ 6,90</p>
+                <ion-icon id="icon-sobremesa2" class="icons-escondido3" name="checkmark-circle"></ion-icon>
             </div>
     
             <div id="sobremesa3" class="opcao__sobremesa" onclick="escolherSobremesa3()" data-identifier="food-option">
@@ -118,6 +125,7 @@
                 <p data-identifier="food-title">bolo</p>
                 <p>Apenas bolo</p>
                 <p data-identifier="food-price">R$ 9,90</p>
+                <ion-icon id="icon-sobremesa3" class="icons-escondido3" name="checkmark-circle"></ion-icon>
             </div>
         </div>
        
@@ -127,21 +135,22 @@
 
     <footer> 
         
-        <button disabled id="botao" class="trigger" onclick="checkout()">Selecione os 3 itens <br> para fechar o pedido</button>
+        <button disabled id="botao" onclick="checkout()">Selecione os 3 itens <br> para fechar o pedido</button>
 
         <div class="modal"> 
             <div class="modal-conteudo">
                 <h1>Confirme seu pedido</h1> 
-                <div id="lista_itens"></div>
-                <p class="confirm-button" onclick="finalizar()">Tudo certo, pode pedir! </p>
-                <span class="close-button">cancelar</span>
+                <div id="listaItens"></div>
+                <button class="botao-confirmar" onclick="finalizar()">Tudo certo, pode pedir!</button>
+                <button class="botao-fechar">cancelar</button>
             </div>
-
         </div>
+        
     </footer>
 
-    <!-- java script da página -->
+    <!-- java script -->
 
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="script.js"></script>
 
 </body>
