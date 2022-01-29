@@ -1,249 +1,109 @@
 /* declarando variaveis */
 
-let prato;
-let bebida;
-let sobremesa;
+let pratoEscolhido = null;
+let bebidaEscolhido = null;
+let sobremesaEscolhido = null;
 
 let temPrato = false;
 let temBebida = false;
 let temSobremesa = false;
 
-/* pratos */
+let tabelaDePreco = {
+    "prato1": 12.90, 
+    "prato2": 14.90,
+    "prato3": 16.90,
+    "bebida1": 4.90,
+    "bebida2": 5.90,
+    "bebida3": 6.90,
+    "sobremesa1": 3.90,
+    "sobremesa2": 6.90,
+    "sobremesa3": 9.90,
+};
 
-const iconPrato1 = document.querySelector("#icon-prato1");
-const iconPrato2 = document.querySelector("#icon-prato2");
-const iconPrato3 = document.querySelector("#icon-prato3");
+let tabelaDeNome = {
+    "prato1": 'Frango Yin Yang', 
+    "prato2": 'Hamburger',
+    "prato3": 'Pizza',
+    "bebida1": 'Coquinha gelada',
+    "bebida2": 'Guaraná gelado',
+    "bebida3": 'Pepsi gelada',
+    "sobremesa1": 'Sorvete',
+    "sobremesa2": 'Pudim',
+    "sobremesa3": 'Bolo',
+};
 
-/* bebidas */
+/* Selecionando pratos */
 
-const iconBebida1 = document.querySelector("#icon-bebida1");
-const iconBebida2 = document.querySelector("#icon-bebida2");
-const iconBebida3 = document.querySelector("#icon-bebida3");
+function escolherPrato(opcaoPrato){
 
-/* sobremesas */
+    const selecionado = document.querySelector(".opcao__prato.selecionado");
 
-const iconSobremesa1 = document.querySelector("#icon-sobremesa1");
-const iconSobremesa2 = document.querySelector("#icon-sobremesa2");
-const iconSobremesa3 = document.querySelector("#icon-sobremesa3");
+    if(selecionado !== null){
+        selecionado.classList.remove("selecionado");
+    }
 
-/* selecionar pratos */
+    const prato = document.querySelector("#"+opcaoPrato);
+    prato.classList.toggle("selecionado");
 
-function escolherPrato1() {
-    
-    document.getElementById("prato1").style.borderColor = "#32B72F";
-    document.getElementById("prato1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconPrato1.style.display = "block";
-    
-    document.getElementById("prato2").style.borderColor = "white";
-    document.getElementById("prato2").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato2.style.display = "none";
-    
-    document.getElementById("prato3").style.borderColor = "white";
-    document.getElementById("prato3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato3.style.display = "none";
-    
-    precoPrato = 12.90;
-    precoPratoString = "12,90"
-    prato = "Frango Yin Yang";
+    document.querySelector("#icon-prato1").style.display = "none";
+    document.querySelector("#icon-prato2").style.display = "none";
+    document.querySelector("#icon-prato3").style.display = "none";
+    const icon = prato.getElementsByTagName("ion-icon")[0];
+    icon.style.display = "block";
+
     temPrato = true;
-     
-    if(temPrato && temBebida && temSobremesa){  
+    pratoEscolhido = opcaoPrato;
+
+   if(temPrato && temBebida && temSobremesa){
         ativarBotao();
     }
 }
 
-function escolherPrato2() {
+/* Selecionando bebidas */
+
+function escolherBebida(opcaoBebida){
     
-    document.getElementById("prato1").style.borderColor = "white";
-    document.getElementById("prato1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato1.style.display = "none";
-    
-    document.getElementById("prato2").style.borderColor = "#32B72F";
-    document.getElementById("prato2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconPrato2.style.display = "block";
-    
-    document.getElementById("prato3").style.borderColor = "white";
-    document.getElementById("prato3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato3.style.display = "none";
-    
-    precoPrato = 14.90;
-    precoPratoString = "14,90"
-    prato = "Hamburger";
-    temPrato = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
+    const selecionado = document.querySelector(".opcao__bebida.selecionado");
+    if(selecionado !== null){
+        selecionado.classList.remove("selecionado");
     }
-}
+    const bebida = document.querySelector("#"+opcaoBebida);
+    bebida.classList.toggle("selecionado");   
 
-function escolherPrato3() {
-    
-    document.getElementById("prato1").style.borderColor = "white";
-    document.getElementById("prato1").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato1.style.display = "none";
-    
-    document.getElementById("prato2").style.borderColor = "white";
-    document.getElementById("prato2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconPrato2.style.display = "none";
-    
-    document.getElementById("prato3").style.borderColor = "#32B72F";
-    document.getElementById("prato3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconPrato3.style.display = "block";
-    
-    precoPrato = 16.90;
-    precoPratoString = "16,90"
-    prato = "Pizza";
-    temPrato = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
-    }
-}
+    document.querySelector("#icon-bebida1").style.display = "none";
+    document.querySelector("#icon-bebida2").style.display = "none";
+    document.querySelector("#icon-bebida3").style.display = "none";
+    const icon = bebida.getElementsByTagName("ion-icon")[0];
+    icon.style.display = "block";
 
-/* selcionar bebidas  */
-
-function escolherBebida1() {
-    
-    document.getElementById("bebida1").style.borderColor = "#32B72F";
-    document.getElementById("bebida1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconBebida1.style.display = "block";
-    
-    document.getElementById("bebida2").style.borderColor = "white";
-    document.getElementById("bebida2").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida2.style.display = "none";
-    
-    document.getElementById("bebida3").style.borderColor = "white";
-    document.getElementById("bebida3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida3.style.display = "none";
-    
-    precoBebida = 4.90;
-    precoBebidaString = "4,90"
-    bebida = "Coquinha gelada";
     temBebida = true;
-    
+    bebidaEscolhido = opcaoBebida;
+
     if(temPrato && temBebida && temSobremesa){
         ativarBotao();
     }
 }
 
-function escolherBebida2() {
+/* Selecionando sobremesas */
+
+function escolherSobremesa(opcaoSobremesa){
     
-    document.getElementById("bebida1").style.borderColor = "white";
-    document.getElementById("bebida1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida1.style.display = "none";
-    
-    document.getElementById("bebida2").style.borderColor = "#32B72F";
-    document.getElementById("bebida2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconBebida2.style.display = "block";
-    
-    document.getElementById("bebida3").style.borderColor = "white";
-    document.getElementById("bebida3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida3.style.display = "none";
-    
-    precoBebida = 5.90;
-    precoBebidaString = "5,90"
-    bebida = "Guaraná gelado";
-    temBebida = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
+    const selecionado = document.querySelector(".opcao__sobremesa.selecionado");
+    if(selecionado !== null){
+        selecionado.classList.remove("selecionado");
     }
-}
+    const sobremesa = document.querySelector("#"+opcaoSobremesa);
+    sobremesa.classList.toggle("selecionado");
 
-function escolherBebida3() {
-    
-    document.getElementById("bebida1").style.borderColor = "white";
-    document.getElementById("bebida1").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida1.style.display = "none";
-    
-    document.getElementById("bebida2").style.borderColor = "white";
-    document.getElementById("bebida2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconBebida2.style.display = "none";
-    
-    document.getElementById("bebida3").style.borderColor = "#32B72F";
-    document.getElementById("bebida3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconBebida3.style.display = "block";
-    
-    precoBebida = 6.90;
-    precoBebidaString = "6,90"
-    bebida = "Pepsi gelada";
-    temBebida = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
-    }
-}
+    document.querySelector("#icon-sobremesa1").style.display = "none";
+    document.querySelector("#icon-sobremesa2").style.display = "none";
+    document.querySelector("#icon-sobremesa3").style.display = "none";
+    const icon = sobremesa.getElementsByTagName("ion-icon")[0];
+    icon.style.display = "block";
 
-/* selecionar sobremesas  */
-
-function escolherSobremesa1() {
-    
-    document.getElementById("sobremesa1").style.borderColor = "#32B72F";
-    document.getElementById("sobremesa1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconSobremesa1.style.display = "block";
-    
-    document.getElementById("sobremesa2").style.borderColor = "white";
-    document.getElementById("sobremesa2").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa2.style.display = "none";
-    
-    document.getElementById("sobremesa3").style.borderColor = "white";
-    document.getElementById("sobremesa3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa3.style.display = "none";
-    
-    precoSobremesa = 3.90;
-    precoSobremesaString = "3,90"
-    sobremesa = "Sorvete";
     temSobremesa = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
-    }
-}
+    sobremesaEscolhido = opcaoSobremesa;
 
-function escolherSobremesa2() {
-    
-    document.getElementById("sobremesa1").style.borderColor = "white";
-    document.getElementById("sobremesa1").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa1.style.display = "none";
-    
-    document.getElementById("sobremesa2").style.borderColor = "#32B72F";
-    document.getElementById("sobremesa2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconSobremesa2.style.display = "block";
-    
-    document.getElementById("sobremesa3").style.borderColor = "white";
-    document.getElementById("sobremesa3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa3.style.display = "none";
-    
-    precoSobremesa = 6.90;
-    precoSobremesaString = "6,90"
-    sobremesa = "Pudim";
-    temSobremesa = true;
-    
-    if(temPrato && temBebida && temSobremesa){
-        ativarBotao();
-    }
-}
-
-function escolherSobremesa3() {
-    
-    document.getElementById("sobremesa1").style.borderColor = "white";
-    document.getElementById("sobremesa1").style.boxShadow = " 0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa1.style.display = "none";
-    
-    document.getElementById("sobremesa2").style.borderColor = "white";
-    document.getElementById("sobremesa2").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25)";
-    iconSobremesa2.style.display = "none";
-    
-    document.getElementById("sobremesa3").style.borderColor = "#32B72F";
-    document.getElementById("sobremesa3").style.boxShadow = "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F";
-    iconSobremesa3.style.display = "block";
-    
-    
-    precoSobremesa = 9.90;
-    precoSobremesaString = "9,90"
-    sobremesa = "Bolo";
-    temSobremesa = true;
-    
     if(temPrato && temBebida && temSobremesa){
         ativarBotao();
     }
@@ -264,7 +124,7 @@ function ativarBotao(){
  const botaoConfirmar = document.querySelector(".botao-confirmar");
  const botaoFechar = document.querySelector(".botao-fechar");
 
-function ativarModal() {
+function toggleModal() {
 
     modal.classList.toggle("mostrar-modal");
 }
@@ -285,13 +145,17 @@ function checkout(){
     
     //PRATO
 
+    let nomePrato = tabelaDeNome[pratoEscolhido];
+    let precoPrato = tabelaDePreco[pratoEscolhido];
+    let precoPratoString = precoPrato.toFixed(2).toString();
+
     let divPrato = document.createElement("div");
     divPrato.classList.add("item");
     
     let itemPrato = document.createElement("p");
     let precoItemPrato = document.createElement("p");
     
-    itemPrato.appendChild(document.createTextNode(prato));
+    itemPrato.appendChild(document.createTextNode(nomePrato));
     precoItemPrato.appendChild(document.createTextNode(precoPratoString));
     
     divPrato.appendChild(itemPrato);
@@ -299,19 +163,27 @@ function checkout(){
     
     //BEBIDA
 
+    let nomeBebida = tabelaDeNome[bebidaEscolhido];
+    let precoBebida = tabelaDePreco[bebidaEscolhido];
+    let precoBebidaString = precoBebida.toFixed(2).toString();
+
     let divBebida = document.createElement("div");
     divBebida.classList.add("item");
     
     let itemBebida = document.createElement("p");
     let precoItemBebida = document.createElement("p");
     
-    itemBebida.appendChild(document.createTextNode(bebida));
+    itemBebida.appendChild(document.createTextNode(nomeBebida));
     precoItemBebida.appendChild(document.createTextNode(precoBebidaString));
     
     divBebida.appendChild(itemBebida);
     divBebida.appendChild(precoItemBebida);
     
     //SOBREMESA
+
+    let nomeSobremesa = tabelaDeNome[sobremesaEscolhido];
+    let precoSobremesa = tabelaDePreco[sobremesaEscolhido];
+    let precoSobremesaString = precoSobremesa.toFixed(2).toString();
     
     let divSobremesa = document.createElement("div");
     divSobremesa.classList.add("item");
@@ -319,7 +191,7 @@ function checkout(){
     let itemSobremesa = document.createElement("p");
     let precoItemSobremesa = document.createElement("p");
 
-    itemSobremesa.appendChild(document.createTextNode(sobremesa));
+    itemSobremesa.appendChild(document.createTextNode(nomeSobremesa));
     precoItemSobremesa.appendChild(document.createTextNode(precoSobremesaString));
 
     divSobremesa.appendChild(itemSobremesa);
@@ -327,17 +199,17 @@ function checkout(){
 
     //TOTAL
 
+    let precoTotal = precoPrato + precoBebida + precoSobremesa;
+    let precoTotalString = precoTotal.toFixed(2).toString();
+
     let divTotal = document.createElement("div");
     divTotal.classList.add("item");
 
     let itemTotal = document.createElement("p");
     let precoItemTotal = document.createElement("p");
 
-    let total = precoPrato + precoBebida + precoSobremesa;
-    totalArredondado = total.toFixed(2); 
-
     itemTotal.appendChild(document.createTextNode("TOTAL"));
-    precoItemTotal.appendChild(document.createTextNode(`R$ ${totalArredondado}`));
+    precoItemTotal.appendChild(document.createTextNode(`R$ ${precoTotalString}`));
 
     divTotal.appendChild(itemTotal);
     divTotal.appendChild(precoItemTotal);
@@ -348,14 +220,14 @@ function checkout(){
     lista.appendChild(divSobremesa);
     lista.appendChild(divTotal);
 
-    ativarModal();
+    toggleModal();
 }
 
 /* Cancelar checkout */
 
 function cancelarCheckout(){
 
-    ativarModal();
+    toggleModal();
     document.getElementById("listaItens").innerHTML = "";
 }
 

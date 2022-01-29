@@ -105,6 +105,11 @@ main{
     cursor: pointer;
 }
 
+.selecionado{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+    border-color: 3px solid #32B72F;
+}
+
 .opcao__prato img{
     margin-left: 14px;
     margin-right: 14px;
@@ -170,6 +175,12 @@ main{
     border-radius: 9px;
     position: relative;
     cursor: pointer;
+}
+
+.selecionado{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+    border-color: 3px solid #32B72F;
+   
 }
 
 .opcao__bebida img{
@@ -239,6 +250,11 @@ main{
     border-radius: 9px;
     position: relative;
     cursor: pointer;
+}
+
+.selecionado{
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+    border-color: 3px solid #32B72F;
 }
 
 .opcao__sobremesa img{
