@@ -255,7 +255,7 @@ function finalizar(){
     mensagem3 = `Total: ${totalArredondado}!`;
 
 
-    let msg =`${mensagem1} \n\n${mensagem2} \n${mensagem3} \n\nMeu nome: ${nome} \nMeu endereço: ${endereco}`;
+    let msg =`${mensagem1} \n${mensagem2} \n${mensagem3} \n\nMeu nome: ${nome} \nMeu endereço: ${endereco}`;
     msg = encodeURIComponent(msg);
-    window.open(`https://wa.me/+5524999348778?text= ${msg}`);
+    window.open(`https://wa.me/+5524999999999?text= ${msg}`);
 }
