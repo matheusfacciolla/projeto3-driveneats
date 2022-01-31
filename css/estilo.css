@@ -6,6 +6,8 @@ body{
     font-family: 'Righteous', cursive;
     font-family: 'Roboto', sans-serif;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
