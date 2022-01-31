@@ -1,7 +1,6 @@
 *{
     box-sizing: border-box;    
 }
-
 body{
     background-color: #E5E5E5;
     font-family: 'Righteous', cursive;
@@ -116,6 +115,7 @@ main{
     margin-top: 18px;
     width: 144px;
     height: 87px;
+    border-radius: 4px;
 }
 
 .opcao__prato p{
@@ -189,6 +189,7 @@ main{
     margin-top: 18px;
     width: 144px;
     height: 87px;
+    border-radius: 4px;
 }
 
 .opcao__bebida p{
@@ -263,6 +264,7 @@ main{
     margin-top: 18px;
     width: 144px;
     height: 82px;
+    border-radius: 4px;
 }
 
 .opcao__sobremesa p{
@@ -473,5 +475,3 @@ button{
     top: 0;
     color: #50D074;
 }
-
-

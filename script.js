@@ -156,7 +156,7 @@ function checkout(){
     let precoItemPrato = document.createElement("p");
     
     itemPrato.appendChild(document.createTextNode(nomePrato));
-    precoItemPrato.appendChild(document.createTextNode(precoPratoString));
+    precoItemPrato.appendChild(document.createTextNode(precoPratoString.toString().replace(".", ",")));
     
     divPrato.appendChild(itemPrato);
     divPrato.appendChild(precoItemPrato);
@@ -174,7 +174,7 @@ function checkout(){
     let precoItemBebida = document.createElement("p");
     
     itemBebida.appendChild(document.createTextNode(nomeBebida));
-    precoItemBebida.appendChild(document.createTextNode(precoBebidaString));
+    precoItemBebida.appendChild(document.createTextNode(precoBebidaString.toString().replace(".", ",")));
     
     divBebida.appendChild(itemBebida);
     divBebida.appendChild(precoItemBebida);
@@ -192,7 +192,7 @@ function checkout(){
     let precoItemSobremesa = document.createElement("p");
 
     itemSobremesa.appendChild(document.createTextNode(nomeSobremesa));
-    precoItemSobremesa.appendChild(document.createTextNode(precoSobremesaString));
+    precoItemSobremesa.appendChild(document.createTextNode(precoSobremesaString.toString().replace(".", ",")));
 
     divSobremesa.appendChild(itemSobremesa);
     divSobremesa.appendChild(precoItemSobremesa);
@@ -209,7 +209,7 @@ function checkout(){
     let precoItemTotal = document.createElement("p");
 
     itemTotal.appendChild(document.createTextNode("TOTAL"));
-    precoItemTotal.appendChild(document.createTextNode(`R$ ${precoTotalString}`));
+    precoItemTotal.appendChild(document.createTextNode(`R$ ${precoTotalString.toString().replace(".", ",")}`));
 
     divTotal.appendChild(itemTotal);
     divTotal.appendChild(precoItemTotal);
@@ -235,15 +235,27 @@ function cancelarCheckout(){
 
 function finalizar(){
 
+    let nomePrato = tabelaDeNome[pratoEscolhido];
+    let precoPrato = tabelaDePreco[pratoEscolhido];
+
+    let nomeBebida = tabelaDeNome[bebidaEscolhido];
+    let precoBebida = tabelaDePreco[bebidaEscolhido];
+
+    let nomeSobremesa = tabelaDeNome[sobremesaEscolhido];
+    let precoSobremesa = tabelaDePreco[sobremesaEscolhido];
+
     let total = precoPrato + precoBebida + precoSobremesa;
-    totalArredondado = total.toFixed(2); 
+    let totalArredondado = total.toFixed(2).toString().replace(".", ","); 
 
     let nome = prompt("Digite seu nome:");
     let endereco = prompt("Digite seu endereço:");
 
     mensagem1 = `Olá, gostaria de fazer o pedido:`;
-    mensagem2 = `(${prato}, ${bebida} e ${sobremesa})`;
+    mensagem2 = `- ${nomePrato} \n- ${nomeBebida} \n- ${nomeSobremesa}`;
     mensagem3 = `Total: ${totalArredondado}!`;
 
-    window.open(`https://wa.me/+552499999999?text= ${mensagem1} ${mensagem2} ${mensagem3} Meu nome: ${nome} Meu endereço: ${endereco} `)
+
+    let msg =`${mensagem1} \n\n${mensagem2} \n${mensagem3} \n\nMeu nome: ${nome} \nMeu endereço: ${endereco}`;
+    msg = encodeURIComponent(msg);
+    window.open(`https://wa.me/+5524999348778?text= ${msg}`);
 }

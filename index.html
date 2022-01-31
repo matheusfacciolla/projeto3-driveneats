@@ -16,8 +16,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
 
-    <title>Driven Eats</title>
-    
+    <!-- links favicon --> 
+
+    <link rel="icon" type="imagem/png" href="imagens/favicon-16x16.png">
+
+    <title>Driven Eats</title>  
 </head>
 
 <body>
@@ -137,7 +140,7 @@
         <button disabled id="botao" onclick="checkout()">Selecione os 3 itens <br> para fechar o pedido</button>
 
         <div class="modal"> 
-            <div class="modal-conteudo">
+            <div class="modal-conteudo" data-identifier="confirmation-dialog">
                 <h1>Confirme seu pedido</h1> 
                 <div id="listaItens"></div>
                 <button class="botao-confirmar" onclick="finalizar()">Tudo certo, pode pedir!</button>
